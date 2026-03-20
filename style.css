@@ -122,28 +122,140 @@ h2{
 }
 
 
-
-@media screen and (max-width: 768px) {
-    #grid div, #resultGrid div {
-        font-size: 10px !important;
-        padding: 4px !important;
-        height: 18vw !important; 
-    }
-
-    h2 {
-        font-size: 1.2rem !important;
-        margin-bottom: 10px !important;
+/* @media screen and (max-width: 768px) {
+    body {
+        padding: 10px 20px !important;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        background-color: #f0f4f8 !important;
     }
 
     #setup, #result {
-        padding: 1.2rem !important;
-        max-width: 90%;
+        width: 110% !important; 
+        height: auto !important;
+        max-width: 400px !important; 
+        border-radius: 20px !important; 
+        padding: 1.5rem !important;
+        margin: auto !important;
+        display: flex;
+        flex-direction: column;
+    }
+
+    #grid, #resultGrid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 8px !important;
+    }
+
+    #grid div, #resultGrid div {
+        height: 75px !important;
+        font-size: 10px !important;
+        border-radius: 10px !important;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1) !important;
+    }
+
+    .flex.gap-2 {
+        display: flex !important;
+        flex-direction: row !important; 
+        gap: 10px !important;
+    }
+
+    button {
+        height: 45px !important;
+        font-size: 14px !important;
+    }
+} */
+
+/* মোবাইল ডিভাইসের জন্য (৭৬৮ পিক্সেলের কম স্ক্রিন সাইজ হলে) */
+@media screen and (max-width: 768px) {
+    body {
+        padding: 0 !important;
+        margin: 0 !important;
+        display: block !important; /* ফ্লেক্সবক্স বন্ধ করে সাধারণ ব্লক লেআউট */
+        min-height: 100vh;
+        background-color: #1a202c !important; /* ডার্ক ব্যাকগ্রাউন্ড (আপনার ছবির মতো) */
+    }
+
+    /* কার্ডটিকে ফুল স্ক্রিন করার জন্য এবং অ্যানিমেশন সরানোর জন্য */
+    #setup, #result {
+        width: 100vw !important;  /* ভিউপোর্ট উইডথ ১০০% */
+        height: 100vh !important; /* ভিউপোর্ট হাইট ১০০% */
+        max-width: 100% !important;
+        border-radius: 0 !important; /* ফুল স্ক্রিনে বর্ডার রেডিয়াস না থাকাই ভালো */
+        padding: 1rem !important;
+        margin: 0 !important;
+        box-shadow: none !important; /* শ্যাডো সরিয়ে ফেলুন */
+        
+        /* বর্ডার অ্যানিমেশন রিমুভ করার জন্য */
+        border: none !important; 
+        animation: none !important; /* অ্যানিমেশন বন্ধ */
+        
+        /* শুধু ব্যাকগ্রাউন্ড ইমেজ বা কালার থাকবে */
+        background: url('./Picture3.png') center/cover no-repeat !important; 
+        
+        display: flex;
+        flex-direction: column;
+        justify-content: center; /* কন্টেন্টগুলো মাঝখানে থাকবে */
+        align-items: center;
+    }
+
+    /* ফিক্স: hidden ক্লাস যাতে !important ফ্লেক্সকে ওভাররাইড করতে পারে */
+    .hidden {
+        display: none !important;
+    }
+
+    /* গ্রিড বক্স এবং ফন্ট সাইজ অ্যাডজাস্টমেন্ট */
+    #grid div, #resultGrid div {
+        font-size: 11px !important; 
+        font-weight: bold !important;
+        padding: 2px !important;
+        height: 18vw !important; /* স্ক্রিন অনুযায়ী বক্সের সাইজ */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        border-radius: 8px !important;
+    }
+
+    /* হেডিং এবং ইনপুট ফিল্ড */
+    h2 {
+        font-size: 1.6rem !important;
+        margin-bottom: 20px !important;
+        margin-top: 0 !important;
     }
 
     input {
-        font-size: 14px !important;
-        height: 6vh !important;
+        width: 100% !important;
+        font-size: 16px !important; /* টাইপ করার সময় জুম হওয়া আটকাতে ১৬ পিক্সেল */
+        padding: 12px !important;
+        height: auto !important;
     }
+
+    /* বাটনগুলো পাশাপাশি রাখার জন্য (আপনার আগের ছবির মতো) */
+    .flex.gap-2 {
+        display: flex !important;
+        flex-direction: row !important;
+        gap: 10px !important;
+        width: 100% !important;
+        margin-top: 15px;
+    }
+
+    button {
+        width: 50% !important; /* দুটি বাটন ৫০% করে জায়গা নেবে */
+        padding: 12px !important;
+        font-size: 16px !important;
+        height: auto !important;
+    }
+    
+    /* রেজাল্ট সেকশনের বাটন */
+    #result button {
+        width: 100% !important;
+        margin-top: 20px !important;
+    }
+}
+.hidden {
+    display: none !important;
 }
 
 #displayTable {

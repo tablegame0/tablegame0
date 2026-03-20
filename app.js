@@ -16,10 +16,14 @@ function init() {
 function submitBingo() {
     const name = document.getElementById('tableName').value;
     if(!name) return alert("Please enter table name");
+    
     document.getElementById('setup').classList.add('hidden');
     document.getElementById('result').classList.remove('hidden');
+    
     document.getElementById('displayTable').innerText = "Table: " + name;
-    document.getElementById('resultGrid').innerHTML = document.getElementById('grid').innerHTML;
+    
+    const resultGrid = document.getElementById('resultGrid');
+    resultGrid.innerHTML = document.getElementById('grid').innerHTML;
 }
 
 function resetBingo() { location.reload(); }
