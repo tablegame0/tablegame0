@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Bingo Card</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body class="p-5">
+    <div id="setup" class="max-w-md mx-auto bg-white p-6 rounded-lg shadow-lg align-items-center">
+        <h2 class="text-xl font-bold mb-4">Bingo Card</h2>
+        <input type="text" id="tableName" placeholder="Enter Table Name" class="w-full p-2 border rounded mb-4">
+        <div id="grid" class="grid grid-cols-4 gap-2 mb-4"></div>
+        <div class="flex gap-2">
+            <button onclick="submitBingo()" class="submitBtn bg-blue-500 text-white px-4 py-2 rounded flex-1">Submit</button>
+            <button onclick="resetBingo()" class="resetsBtn bg-red-500 text-white px-4 py-2 rounded flex-1">Clear/Reset</button>
+        </div>
+    </div>
+
+    <div id="result" class="hidden max-w-md mx-auto bg-white p-6 rounded-lg shadow-lg mt-5">
+        <h2 id="displayTable" class="text-2xl font-bold mb-4 text-center text-blue-600"></h2>
+        <div id="resultGrid" class="grid grid-cols-4 gap-2 mb-4 pointer-events-none"></div>
+        <button onclick="location.reload()" class="w-full bg-gray-500 text-white py-2 rounded">Back to Play</button>
+    </div>
+
+    <script src="./app.js"></script>
+</body>
+</html>

@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Iosevka+Charon:wght@500;700&family=Potta+One&display=swap');
+
+:root{
+    --font1: "Potta One", system-ui;
+    --font2: "Iosevka Charon", monospace;
+    --font3: "Inter", sans-serif;
+}
+
+body{
+    background-color: aliceblue;
+    margin: 0;
+    padding: 0;
+    display: flex;             
+    justify-content: center;    
+    align-items: center;       
+    min-height: 100vh;      
+    font-family: var(--font3);   
+}
+#setup{
+    box-shadow: 2px 2px 15px rgb(219, 219, 219);
+}
+.selected { 
+    background-color: #4ade80 !important; 
+    text-decoration: line-through; 
+}
+
+h2{
+    color: #ffffff; 
+    text-align: center;
+    font-size: 28px !important;
+    font-family: var(--font3);
+    font-weight: 600!important;
+    text-shadow: 0px 1px 2px rgba(255,255,255,0.5);
+}
+#tableName{
+    font-family: var(--font3);
+    height: 7.5vh;
+    border: 1px solid rgb(199, 199, 199);
+    letter-spacing: 0.7pt;
+    font-size: 15px;
+    text-transform: capitalize;
+    padding-left: 10px;
+}
+#tableName::placeholder{
+    font-family: var(--font2);
+    padding-left: 5px !important;
+}
+#tableName:focus{
+    border: transparent !important;
+    outline: none !important;
+    box-shadow: 1px 1px 4px rgb(192, 192, 192);
+}
+
+#grid div {
+    transition: all 0.3s ease;
+    border-radius: 8px; 
+    font-size: 13px;
+    font-family: var(--font3);
+    font-weight: 400;
+    color: #1a202c;
+}
+
+#grid div:hover {
+    background-color: aliceblue; 
+    box-shadow: 4px 4px 3px rgba(0, 0, 0, 0.1);
+}
+
+.submitBtn{
+    /* background-color: #21984d; */
+    background-color:  #36bc67;
+    font-weight: 500;
+    font-size: 16px;
+    font-family: var(--font3);
+    box-shadow: 2px 2px 2px #cbcbcb;
+}
+.resetsBtn{
+    background-color:  #ff3a3a;
+    font-weight: 500;
+    font-size: 16px;
+    font-family: var(--font3);
+    box-shadow: 2px 2px 2px #cbcbcb;
+}
+#displayTable{
+    color: rgba(31, 31, 255, 0.759);
+    color: #1a202c !important;
+}
+#resultGrid div{
+    font-family: var(--font3) !important;
+    font-size: 14px !important;
+}
+
+
+#setup, #result {
+    position: relative;
+    width: 100%;
+    max-width: 450px;
+    box-sizing: border-box;
+    padding: 2rem;
+    border-radius: 15px;
+    border: 4px solid transparent; 
+    background: 
+        url('./Picture3.png') padding-box, 
+        linear-gradient(45deg, 
+            #ff0000, #ff4000, #ff8000, #ffbf00, #ffff00, #bfff00, #80ff00, #40ff00, 
+            #00ff00, #00ff40, #00ff80, #00ffbf, #00ffff, #00bfff, #0080ff, #0040ff, 
+            #0000ff, #4000ff, #8000ff, #bf00ff, #ff00ff, #ff00bf, #ff0080, #ff0040,
+            #ff0000, #ff4d4d, #ff9933, #ffff66, #99ff33, #33ff33, #33ff99, #33ffff,
+            #3399ff, #3333ff, #9933ff, #ff33ff, #ff3399, #ff3333, #e6b8af, #f4cccc,
+            #fce5cd, #fff2cc, #d9ead3, #d0e0e3, #cfe2f3, #d9d2e9, #ead1dc, #dd7e6b,
+            #ea9999, #f9cb9c, #ffe599, #b6d7a8) border-box;
+    background-size: cover, 800% 800%;
+    background-position: center, 0% 50%;
+    background-repeat: no-repeat;
+    animation: infinityRGB 18s ease infinite;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+@keyframes infinityRGB {
+    0% { background-position: center, 0% 50%; }
+    50% { background-position: center, 100% 50%; }
+    100% { background-position: center, 0% 50%; }
+}
+
+
+
+@media screen and (max-width: 768px) {
+    #grid div, #resultGrid div {
+        font-size: 10px !important;
+        padding: 4px !important;
+        height: 18vw !important; 
+    }
+
+    h2 {
+        font-size: 1.2rem !important;
+        margin-bottom: 10px !important;
+    }
+
+    #setup, #result {
+        padding: 1.2rem !important;
+        max-width: 90%;
+    }
+
+    input {
+        font-size: 14px !important;
+        height: 6vh !important;
+    }
+}
+
+#displayTable {
+    color: white !important;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
+    font-size: 24px; 
+}
